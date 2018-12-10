@@ -1,6 +1,7 @@
 package com.example.marijn.trivia;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,7 +21,7 @@ public class TriviaRequest implements Response.Listener<JSONObject>, Response.Er
     private Callback activity;
 
     public interface Callback {
-        void gotTrivia(ArrayList<String> questions);
+        void gotTrivia(ArrayList<Trivia> trivia);
         void gotTriviaError(String message);
     }
 
@@ -32,27 +33,44 @@ public class TriviaRequest implements Response.Listener<JSONObject>, Response.Er
     public void getTrivia(Callback activity) {
         this.activity = activity;
         RequestQueue queue = Volley.newRequestQueue(context);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("https://resto.mprog.nl/categories", null, this, this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest("https://opentdb.com/api.php?amount=10&category=18&type=multiple", null, this, this);
         queue.add(jsonObjectRequest);
-
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        activity.gotTriviaError(error.getMessage());
+        Log.d("goTriviaError", error.getMessage());
     }
 
     @Override
     public void onResponse(JSONObject response) {
-        ArrayList<String> questionsArrayList = new ArrayList<>();
+        ArrayList<Trivia> triviaArrayList = new ArrayList<>();
 
         try {
 
-            JSONArray categories = response.getJSONArray("questions");
+            JSONArray resultsArray = response.getJSONArray("results");
 
-            for (int i = 0; i < categories.length(); i++) {
-                questionsArrayList.add(categories.getString(i));
-                activity.gotTrivia(questionsArrayList);
+            for (int i = 0; i < resultsArray.length(); i++) {
+
+                JSONObject resultsObject = resultsArray.getJSONObject(i);
+
+                String difficulty = resultsObject.getString("difficulty");
+                String question = resultsObject.getString("question");
+                String correctAnswer = resultsObject.getString("correct_answer");
+                String ID = String.valueOf(i);
+
+                ArrayList<String> incAnsArrayList = new ArrayList<>();
+
+                JSONArray incAnsArray = resultsObject.getJSONArray("incorrect_answers");
+
+                for (int j = 0; j < incAnsArray.length(); j++) {
+                    incAnsArrayList.add(incAnsArray.getString(j));
+                }
+
+                triviaArrayList.add(new Trivia(difficulty, question, correctAnswer, incAnsArrayList, ID));
+
+                activity.gotTrivia(triviaArrayList);
             }
 
         } catch (JSONException e) {
