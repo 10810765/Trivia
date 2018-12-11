@@ -117,7 +117,7 @@
             android:id="@+id/pointsView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="160dp"
             android:text="points"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="127dp"
