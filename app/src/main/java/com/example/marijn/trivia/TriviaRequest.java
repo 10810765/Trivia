@@ -45,9 +45,11 @@ public class TriviaRequest implements Response.Listener<JSONObject>, Response.Er
 
     @Override
     public void onResponse(JSONObject response) {
-        ArrayList<Trivia> triviaArrayList = new ArrayList<>();
+
 
         try {
+
+            ArrayList<Trivia> triviaArrayList = new ArrayList<>();
 
             JSONArray resultsArray = response.getJSONArray("results");
 
@@ -70,8 +72,7 @@ public class TriviaRequest implements Response.Listener<JSONObject>, Response.Er
 
                 triviaArrayList.add(new Trivia(difficulty, question, correctAnswer, incAnsArrayList, ID));
 
-                activity.gotTrivia(triviaArrayList);
-            }
+            } activity.gotTrivia(triviaArrayList);
 
         } catch (JSONException e) {
             e.printStackTrace();
