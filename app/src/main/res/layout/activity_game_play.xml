@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:text="question_count"
+        android:layout_marginTop="16dp"
+        android:text="@string/question_count"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="128dp" />
@@ -22,10 +22,11 @@
         android:id="@+id/questionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="12dp"
-        android:text="question"
+        android:text="@string/question"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="109dp"
         tools:layout_editor_absoluteY="181dp" />
@@ -43,7 +44,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onAnswerClick"
-            android:text="answer_A"
+            android:tag="0"
+            android:text="@string/answer_a"
             tools:layout_editor_absoluteX="139dp"
             tools:layout_editor_absoluteY="305dp" />
 
@@ -53,7 +55,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onAnswerClick"
-            android:text="answer_B"
+            android:tag="1"
+            android:text="@string/answer_b"
             tools:layout_editor_absoluteX="127dp"
             tools:layout_editor_absoluteY="392dp" />
     </LinearLayout>
@@ -71,7 +74,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onAnswerClick"
-            android:text="answer_C"
+            android:tag="2"
+            android:text="@string/answer_c"
             tools:layout_editor_absoluteX="78dp"
             tools:layout_editor_absoluteY="446dp" />
 
@@ -81,7 +85,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onAnswerClick"
-            android:text="answer_D"
+            android:tag="3"
+            android:text="@string/answer_d"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="231dp" />
 
@@ -95,7 +100,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginRight="24dp"
         android:onClick="onConfirmClick"
-        android:text="Confirm Answer" />
+        android:text="@string/confirm_answer" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,16 +114,16 @@
             android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
             android:onClick="onRestartClicked"
-            android:text="Restart" />
+            android:text="@string/restart" />
 
         <TextView
             android:id="@+id/pointsView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="160dp"
-            android:text="points"
+            android:layout_marginStart="140dp"
+            android:text="@string/points"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="127dp"
             tools:layout_editor_absoluteY="67dp" />

@@ -1,11 +1,19 @@
 package com.example.marijn.trivia;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.ArrayList;
 
-public class Trivia {
+/**
+ * Marijn Meijering <m.h.j.meijering@uva.nl>
+ * 10810765 Universiteit van Amsterdam
+ * Minor Programmeren 17/12/2018
+ */
+public class Trivia implements Parcelable {
     private String difficulty, question, correctAnswer, ID;
     private ArrayList incorrectAnswers;
 
+    // Trivia questions constructor
     public Trivia(String difficulty, String question, String correctAnswer, ArrayList incorrectAnswers, String ID) {
         this.difficulty = difficulty;
         this.question = question;
@@ -14,12 +22,9 @@ public class Trivia {
         this.ID = ID;
     }
 
+    // Getters and setters
     public String getDifficulty() {
         return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
     }
 
     public String getQuestion() {
@@ -34,23 +39,42 @@ public class Trivia {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
     public ArrayList getIncorrectAnswers() {
         return incorrectAnswers;
     }
 
-    public void setIncorrectAnswers(ArrayList incorrectAnswers) {
-        this.incorrectAnswers = incorrectAnswers;
+
+    // The code below is created with help from: https://stackoverflow.com/questions/12503836/
+    // It is used to create custom Parcable objects from the Trivia ArrayList
+    // This enables the use of outState.putParcelableArrayList(), so we can save the state of the Trivia game
+    private Trivia(Parcel in) {
+        difficulty = in.readString();
+        question = in.readString();
+        correctAnswer = in.readString();
+        ID = in.readString();
+        incorrectAnswers = in.readArrayList(Trivia.class.getClassLoader());
+
     }
 
-    public String getID() {
-        return ID;
+    public int describeContents() {
+        return 0;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(difficulty);
+        out.writeString(question);
+        out.writeString(correctAnswer);
+        out.writeString(ID);
+        out.writeList(incorrectAnswers);
     }
+
+    public static final Parcelable.Creator<Trivia> CREATOR = new Parcelable.Creator<Trivia>() {
+        public Trivia createFromParcel(Parcel in) {
+            return new Trivia(in);
+        }
+
+        public Trivia[] newArray(int size) {
+            return new Trivia[size];
+        }
+    };
 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GamePlayActivity">
+
+    <TextView
+        android:id="@+id/questionsLeftView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/question_count"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <TextView
+        android:id="@+id/questionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/question"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/answerC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onAnswerClick"
+                    android:tag="2"
+                    android:text="@string/answer_c"
+                    tools:layout_editor_absoluteX="78dp"
+                    tools:layout_editor_absoluteY="446dp" />
+
+                <Button
+                    android:id="@+id/answerD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onAnswerClick"
+                    android:tag="3"
+                    android:text="@string/answer_d"
+                    tools:layout_editor_absoluteX="109dp"
+                    tools:layout_editor_absoluteY="231dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/answerA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onAnswerClick"
+                    android:tag="0"
+                    android:text="@string/answer_a"
+                    tools:layout_editor_absoluteX="139dp"
+                    tools:layout_editor_absoluteY="305dp" />
+
+                <Button
+                    android:id="@+id/answerB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onAnswerClick"
+                    android:tag="1"
+                    android:text="@string/answer_b"
+                    tools:layout_editor_absoluteX="127dp"
+                    tools:layout_editor_absoluteY="392dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/confirmButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="24dp"
+                android:onClick="onConfirmClick"
+                android:text="@string/confirm_answer" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pointsView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:text="@string/points"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="127dp"
+                tools:layout_editor_absoluteY="67dp" />
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                android:onClick="onRestartClicked"
+                android:text="@string/restart" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
