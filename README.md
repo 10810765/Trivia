@@ -17,6 +17,7 @@ By: Marijn Meijering - 10810765
 * The name must be typed before starting the Trivia game
 * An answer must be selected before confirming
 * The higscores are displayed in descending order
+* Visible feedback when an answer is selected (but not confirmed yet) by making the other answers light-grey
 
 #### Portrait view screenshots
 ![App1 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_1.png)
