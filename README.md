@@ -31,7 +31,7 @@ By: Marijn Meijering - 10810765
 ![App7 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_7.png)
 ![App8 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_8.png)
 ![App9 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_9.png)
-![App10 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_9.png)
+![App10 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_10.png)
 
 
 
