@@ -11,9 +11,12 @@ By: Marijn Meijering - 10810765
 * Trivia game state will be kept upon rotating the screen
 * You can choose different categories
 * The standard android back button brings you back to the first screen (Making it impossible to answer a question again)
-* Proper feedback, after answering a question a message will be displayed which tells you if you've answered the question corectly. If you didn't the right answere will be shown.
+* Proper feedback, after answering a question a message will be displayed which tells you if you've answered the question corectly. If you didn't the right answer will be shown.
 * The ability to refresh the highscores list
-* 
+* Html formatted questions and answered will be displayed correctly (necessary for the computer category)
+* The name must be typed before starting the Trivia game
+* An answer must be selected before confirming
+* The higscores are displayed in descending order
 
 #### Portrait view screenshots
 ![App1 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_1.png)
@@ -21,12 +24,13 @@ By: Marijn Meijering - 10810765
 ![App3 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_3.png)
 ![App4 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_4.png)
 ![App5 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_5.png)
+![App6 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_6.png)
 
 #### Landscape view screenshots
-![App6 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_6.png)
 ![App7 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_7.png)
 ![App8 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_8.png)
 ![App9 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_9.png)
+![App10 Trivia](https://github.com/10810765/Trivia/blob/master/doc/Trivia_9.png)
 
 
 
