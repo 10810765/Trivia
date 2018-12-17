@@ -14,7 +14,7 @@ By: Marijn Meijering - 10810765
 * Proper feedback, after answering a question a message will be displayed which tells you if you've answered the question corectly. If you didn't the right answer will be shown.
 * The ability to refresh the highscores list
 * Html formatted questions and answered will be displayed correctly (necessary for the computer category)
-* The name must be typed before starting the Trivia game
+* A name must be typed before starting the Trivia game
 * An answer must be selected before confirming
 * The higscores are displayed in descending order
 * Visible feedback when an answer is selected (but not confirmed yet) by making the other answers light-grey
